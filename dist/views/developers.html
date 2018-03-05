@@ -1,0 +1,26 @@
+<div>
+    <p>You are developer</p> 
+    <input type="text" ng-model="devName">
+    <button type="submit" ng-click="searchDevName()"> Search Dev Name </button> 
+    <div ng-show="showDevForm">
+        <button ng-click="searchFreeTask()"> Search Free Task </button>   
+        <button ng-click="searchAssignedTask()"> Search Assigned Task </button>
+        <table>
+            <tr>
+                <td> Description </td>
+                <td> Price </td>
+                <td> Status </td>
+                <td> Assign Button </td>
+                <td> Finish Button </td>
+            </tr>
+            <tr ng-repeat="task in tasks">
+                <td>{{task.description}}</td>
+                <td>{{task.price | currency}}</td>
+                <td>{{task.status}}</td>
+
+                <td><button ng-click="assignTask(task)">Assign</button></td>
+                <td><button ng-click="finishTask(task)">Finish</button></td>
+            </tr>
+        </table> 
+    </div>
+</div>
