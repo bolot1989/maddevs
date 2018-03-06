@@ -8,7 +8,7 @@ let wallet = new Schema({
 });
 
 wallet.methods.addMoney = (sum) => {
-    this.moneyAmount += sum;
+    this._doc.moneyAmount += sum;
 }
 
 let Wallet = mongoose.model('Wallet', wallet);
